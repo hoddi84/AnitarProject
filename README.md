@@ -4,8 +4,8 @@ Instructions:
 
 - Running on Android:
 
-1) git clone https://github.com/hoddi84/AnitarProject.git "FolderName"
-2) start up an android emulator, I used Nexus 5 (API Levl 23)
-3) navigate to "FolderName"
-4) react-native start 
+1) git clone https://github.com/hoddi84/AnitarProject.git "FolderName" <br/>
+2) start up an android emulator, I used Nexus 5 (API Levl 23) <br/>
+3) navigate to "FolderName" <br/>
+4) react-native start  <br/>
 5) react-native run-android
