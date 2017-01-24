@@ -21,7 +21,8 @@ export default class ShowView extends Component {
     const ds = new ListView.DataSource({rowHasChanged: (r1, r2) => r1 !== r2});
     this.state = {
       userDataSource: ds,
-      finishedLoading: false
+      finishedLoading: false,
+      fetchError: false
     };
   }
 
@@ -37,6 +38,11 @@ export default class ShowView extends Component {
         this.setState({
           userDataSource: this.state.userDataSource.cloneWithRows(responseData.results),
           finishedLoading: true
+        });
+      })
+      .catch((error) => {
+        this.setState({
+          fetchError: true
         });
       });
   }
@@ -67,6 +73,19 @@ export default class ShowView extends Component {
 
   render() {
 
+    // fetch error.
+    if (this.state.fetchError) {
+      return (
+        <View>
+            <Text style={styles.errorText}>UNABLE TO FETCH TV GUIDE</Text>
+          <Button
+            onPress={this.onPress.bind(this)}
+            title='Til Baka'
+          />
+        </View>
+      );
+    }
+
     // display before fetch.
     if (!this.state.finishedLoading) {
       return (
@@ -95,6 +114,11 @@ export default class ShowView extends Component {
 }
 
 const styles = StyleSheet.create({
+  errorText: {
+    justifyContent: 'center',
+    padding: 10,
+    fontWeight: 'bold'
+  },
   main: {
     backgroundColor: '#E9E8E6',
     marginBottom: 2,

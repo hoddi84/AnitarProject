@@ -45,6 +45,7 @@ export default class ChannelView extends Component {
     const nav = this.props.navigator;
 
     const getShowView = function(endpoint) {
+      console.log(endpoint);
       nav.push({
         id: 'showView',
         channelName: endpoint
