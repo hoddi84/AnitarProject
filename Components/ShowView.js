@@ -41,8 +41,6 @@ export default class ShowView extends Component {
         });
       })
       .catch((error) => {
-        console.log('ERROR');
-        console.log(this.state.finishedLoading);
         this.setState({
           fetchError: true
         });
