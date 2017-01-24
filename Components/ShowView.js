@@ -41,6 +41,8 @@ export default class ShowView extends Component {
         });
       })
       .catch((error) => {
+        console.log('ERROR');
+        console.log(this.state.finishedLoading);
         this.setState({
           fetchError: true
         });
@@ -73,7 +75,7 @@ export default class ShowView extends Component {
 
   render() {
 
-    // fetch error.
+    // fetch error, i.e. no result.
     if (this.state.fetchError) {
       return (
         <View>
@@ -115,8 +117,8 @@ export default class ShowView extends Component {
 
 const styles = StyleSheet.create({
   errorText: {
-    justifyContent: 'center',
     padding: 10,
+    textAlign: 'center',
     fontWeight: 'bold'
   },
   main: {

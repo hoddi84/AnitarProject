@@ -98,7 +98,6 @@ const styles = StyleSheet.create({
     marginRight: 5,
   },
   channelText: {
-    justifyContent: 'center',
     paddingTop:5,
     paddingBottom: 5,
     paddingLeft: 15,
